@@ -24,6 +24,8 @@
               android:label="fragment_game_won" tools:layout="@layout/fragment_game_won">
         <action android:id="@+id/action_gameWonFragment_to_gameFragment" app:destination="@+id/titleFragment"
                 app:popUpTo="@+id/titleFragment" app:popUpToInclusive="false"/>
+        <argument android:name="questionsCount" app:argType="integer"/>
+        <argument android:name="correctAnswersCount" app:argType="integer"/>
     </fragment>
     <fragment android:id="@+id/aboutFragment" android:name="com.example.android.navigation.AboutFragment"
               tools:layout="@layout/fragment_about" android:label="@string/title_about_trivia"/>
