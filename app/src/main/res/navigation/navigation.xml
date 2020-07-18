@@ -6,24 +6,32 @@
 
     <fragment android:id="@+id/titleFragment" android:name="com.example.android.navigation.TitleFragment"
               android:label="fragment_title" tools:layout="@layout/fragment_title">
-        <action android:id="@+id/action_titleFragment_to_gameFragment" app:destination="@id/gameFragment"/>
+        <action android:id="@+id/action_titleFragment_to_gameFragment" app:destination="@id/gameFragment"
+                app:enterAnim="@anim/fade_in" app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
     </fragment>
     <fragment android:id="@+id/gameFragment" android:name="com.example.android.navigation.GameFragment"
               android:label="fragment_game" tools:layout="@layout/fragment_game">
         <action android:id="@+id/action_gameFragment_to_gameOverFragment" app:destination="@id/gameOverFragment"
-                app:popUpTo="@+id/gameFragment" app:popUpToInclusive="true"/>
+                app:popUpTo="@+id/gameFragment" app:popUpToInclusive="true"
+                app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
         <action android:id="@+id/action_gameFragment_to_gameWonFragment" app:destination="@id/gameWonFragment"
-                app:popUpTo="@+id/gameFragment" app:popUpToInclusive="true"/>
+                app:popUpTo="@+id/gameFragment" app:popUpToInclusive="true"
+                app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@anim/nav_default_pop_enter_anim" app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
     </fragment>
     <fragment android:id="@+id/gameOverFragment" android:name="com.example.android.navigation.GameOverFragment"
               android:label="fragment_game_over" tools:layout="@layout/fragment_game_over">
         <action android:id="@+id/action_gameOverFragment_to_gameFragment" app:destination="@+id/titleFragment"
-                app:popUpTo="@+id/titleFragment" app:popUpToInclusive="false"/>
+                app:popUpTo="@+id/titleFragment" app:popUpToInclusive="false"
+                app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"/>
     </fragment>
     <fragment android:id="@+id/gameWonFragment" android:name="com.example.android.navigation.GameWonFragment"
               android:label="fragment_game_won" tools:layout="@layout/fragment_game_won">
         <action android:id="@+id/action_gameWonFragment_to_gameFragment" app:destination="@+id/titleFragment"
-                app:popUpTo="@+id/titleFragment" app:popUpToInclusive="false"/>
+                app:popUpTo="@+id/titleFragment" app:popUpToInclusive="false"
+                app:enterAnim="@anim/nav_default_enter_anim" app:exitAnim="@anim/nav_default_exit_anim"/>
         <argument android:name="questionsCount" app:argType="integer"/>
         <argument android:name="correctAnswersCount" app:argType="integer"/>
     </fragment>
